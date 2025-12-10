@@ -1,6 +1,6 @@
 # Khana Khajana
 
-A web application for food ordering and delivery management system.
+A web application for food ordering and delivery management system built with PHP and MySQL.
 
 ## Features
 
@@ -11,67 +11,66 @@ A web application for food ordering and delivery management system.
 - Track order status
 - Admin dashboard for restaurant management
 - Responsive design for all devices
+- PDF invoice generation
+- User reviews and ratings
 
 ## Prerequisites
 
-- Python 3.8 or higher
-- MySQL Server
-- pip (Python package installer)
+- PHP 7.4 or higher
+- MySQL Server 5.7 or higher
+- Apache/Nginx web server
+- XAMPP/WAMP/LAMP stack (recommended for local development)
 
 ## Installation
 
 1. Clone the repository:
    ```bash
-   git clone [your-repository-url]
-   cd khana_khajana
+   git clone https://github.com/jensi05/Khana-Khajana.git
+   cd Khana-Khajana
    ```
 
-2. Create a virtual environment:
-   ```bash
-   python -m venv venv
-   .\venv\Scripts\activate  # On Windows
+2. Set up the database:
+   - Create a new MySQL database named `khana_khajana`
+   - Import the database schema from `database/khana_khajana.sql`
+
+3. Configure database connection:
+   - Open `config.php` and update the database credentials:
+   ```php
+   $db_host = 'localhost';
+   $db_user = 'your_username';
+   $db_pass = 'your_password';
+   $db_name = 'khana_khajana';
    ```
 
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+4. Set up your web server:
+   - Point your web server's document root to the project directory
+   - Ensure `mod_rewrite` is enabled for clean URLs
 
-4. Set up environment variables:
-   Create a `.env` file in the root directory with the following variables:
-   ```
-   SECRET_KEY=your-secret-key
-   DATABASE_URI=mysql+pymysql://username:password@localhost/khana_khajana
-   ```
-
-5. Initialize the database:
-   ```bash
-   flask db init
-   flask db migrate
-   flask db upgrade
-   ```
-
-6. Run the application:
-   ```bash
-   flask run
-   ```
+5. Access the application:
+   - Open your browser and visit `http://localhost/Khana-Khajana`
+   - Admin panel: `http://localhost/Khana-Khajana/Admin`
 
 ## Project Structure
 
 ```
-khana_khajana/
-├── app/
-│   ├── __init__.py
-│   ├── models.py
-│   ├── routes.py
-│   ├── static/
-│   └── templates/
-├── migrations/
-├── instance/
-├── .env
-├── config.py
-├── requirements.txt
-└── README.md
+Khana-Khajana/
+├── Admin/               # Admin panel files
+├── assets/             # CSS, JS, and other static assets
+├── fpd/                # PDF generation library
+├── img/                # Image assets
+├── includes/           # PHP includes and utilities
+├── vendor/             # Third-party libraries
+├── about.php          # About page
+├── cart.php           # Shopping cart
+├── checkout.php       # Checkout process
+├── config.php         # Database configuration
+├── contact.php        # Contact page
+├── index.php          # Homepage
+├── login.php          # User login
+├── menu.php           # Menu listing
+├── order.php          # Order management
+├── register.php       # User registration
+└── README.md          # Project documentation
 ```
 
 ## Contributing
@@ -79,7 +78,7 @@ khana_khajana/
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
+4. Push to the branch (`git push origin feature/AmazingFeature`) 
 5. Open a Pull Request
 
 ## License
@@ -88,4 +87,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-For any queries, please contact [your-email@example.com](mailto:your-email@example.com)
+For any queries, please contact [jenikoladiya@gmail.com](mailto:jenikoladiya@gmail.com)
